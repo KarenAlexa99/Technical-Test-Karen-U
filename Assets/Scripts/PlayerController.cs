@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jetpackForce = 0.5f;
     [SerializeField] private float rechargeRate;
     [SerializeField] private float dischargeRate;
+    [SerializeField] private ParticleSystem pSJetpack;
 
     public float curFuel { get; set; }
     private Vector3 playerMovementInput;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && curFuel > 0)
         {
+            pSJetpack.Play();
             curFuel -= dischargeRate;
             playerBody.AddForce(Vector3.up * jetpackForce, ForceMode.Impulse);
         }

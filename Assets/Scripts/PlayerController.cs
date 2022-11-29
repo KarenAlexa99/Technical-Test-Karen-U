@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jetpackForce = 0.5f;
     [SerializeField] private float rechargeRate;
     [SerializeField] private float dischargeRate;
+
     [SerializeField] private ParticleSystem pSJetpack;
 
     public float curFuel { get; set; }
